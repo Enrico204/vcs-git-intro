@@ -8,25 +8,77 @@ track of changes} on the source code.
 
 \vspace{1em}
 
-\textbf{Why?} There are a number of reasons for this: bug fixing/hunting, keep
-track of (team)work, code sharing, etc.
+\textbf{Why?}
+\begin{itemize}
+\item Complex projects/documents, built up over time
+\item Multiple collaborators
+\item Multiple (parallel) versions (eg. testing a new algorithm while the main
+\textit{branch} of development is focused on other things)
+\item Reproducibility (eg. bug hunting, etc.)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{How do we track the code? Manual copies!}
+
+\begin{center}
+\includegraphics[height=0.89\textheight]{phd101212s}
+\end{center}
 
 \end{frame}
 
-\begin{frame}[fragile]{Let's suppose that we have a bug}
+\begin{frame}[fragile]{How do we track the code? Manual copies!}
 
-What if a bug just appeared in our application?
+\begin{center}
+\Huge NO!
+\end{center}
 
+Why?
 \begin{itemize}
-  \item \textbf{No code versioning}: Bug hunting only (no way to know why or when the bug is appeared)
-  \item \textbf{``ZIP file" versioning}: Decompress each single ZIP file, diff file by file
-  \item \textbf{with VCS}: 
+  \item Manual = fallible
+  \item Labelling issue
+  \item No metadata (dates, authors, etc.)
+  \item No integrated/automated tool
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}[fragile]{What is a Version Control System}
+\begin{frame}[fragile]{How do we track the code? Dropbox/Google Drive/OneDrive!}
 
-A \textit{Version Control system} is a way to keep track of the source code.
+What about... \textbf{Dropbox/Google Drive/OneDrive}??
+
+\end{frame}
+
+\begin{frame}[fragile]{How do we track the code? Dropbox/Google Drive/OneDrive!}
+
+\begin{center}
+\Huge NO!
+\end{center}
+
+Why?
+\begin{itemize}
+  \item No concept of "consistent checkpoint/commit"
+  \item Collaboration is broken (unless you're working on very simple projects)
+  \item No \textit{branching}/\textit{merging} capabilities
+  \item Few metadata
+  \item Too generic
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{How do we track the code? Version Control Systems!}
+
+\begin{center}
+\includegraphics[width=5em]{git-logo}
+\hspace{10em}
+\includegraphics[width=5em]{subversion-logo}
+\end{center}
+
+\begin{itemize}
+  \item Consistent checkpoints, with \textbf{atomic operations}
+  \item Written for text files (eg. source code), not for generic files
+  \item Collaboration is well supported, eg. with file locking
+  \item \textit{Branching}/\textit{merging} capabilities
+  \item Metadata, a lot of
+\end{itemize}
 
 \end{frame}
