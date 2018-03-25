@@ -1,0 +1,52 @@
+\documentclass[10pt]{beamer}
+\usepackage[italian]{babel}
+%\usepackage[utf8]{inputenc}
+
+\usetheme{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{listings}
+\lstset{breaklines=true}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\title{Version Control Systems and Git}
+\subtitle{A brief introduction}
+\date{\today}
+\author{Enrico Bassetti}
+\institute{Sapienza - University of Rome}
+%\titlegraphic{\hfill\includegraphics[height=1.5cm]{llg.png}}
+
+\begin{document}
+
+\setbeamertemplate{frame footer}{Sapienza - University of Rome}
+
+\maketitle
+
+\begin{frame}{Roadmap}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\include{vcs}
+\include{git}
+\include{gitrepo}
+
+\begin{frame}[standout]
+  Questions?
+\end{frame}
+
+\begin{frame}{}
+
+  \begin{center}\ccbysa\end{center}
+
+\end{frame}
+
+\end{document}
