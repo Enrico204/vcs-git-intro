@@ -102,6 +102,7 @@ Retrieve commits from (default) remote endpoint \\
 \end{itemize}
 \end{frame}
 
+
 \begin{frame}[fragile]{GitHub}
 
 \includegraphics[width=10em]{github-logo}
@@ -113,4 +114,79 @@ Retrieve commits from (default) remote endpoint \\
   \item Wiki, issues, pull requests and so on
   \item[] \url{https://github.com/}
 \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Before we begin}
+
+On a new computer/user profile, we need to setup our environment:
+
+\begin{center}
+\begin{minipage}{\textwidth}
+
+\begin{listing}[H]
+%\scriptsize
+\begin{minted}[mathescape,
+							 numbersep=5pt,
+							 gobble=0,
+							 frame=lines,
+							 framesep=2mm]{bash}
+$ git config --global user.name "John Doe"
+$ git config --global user.email john@doe.com
+\end{minted}
+\end{listing}
+
+\end{minipage}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Start to develop on an existing Git repository}
+
+\begin{center}
+\begin{minipage}{\textwidth}
+
+\begin{listing}[H]
+%\scriptsize
+\begin{minted}[mathescape,
+							 numbersep=5pt,
+							 gobble=0,
+							 frame=lines,
+							 framesep=2mm]{bash}
+$ git clone https://githosting/gitrepo gitrepodir
+$ cd gitrepodir/
+\end{minted}
+\end{listing}
+
+\end{minipage}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Import a project into a repository}
+
+\begin{center}
+\begin{minipage}{\textwidth}
+
+\begin{listing}[H]
+%\scriptsize
+\begin{minted}[mathescape,
+							 numbersep=5pt,
+							 gobble=0,
+							 frame=lines,
+							 framesep=2mm]{bash}
+$ cd existingproject/
+$ git init
+$ git add .
+$ git commit
+$ git remote add origin https://githosting/gitrepo
+$ git push -u origin master
+\end{minted}
+\end{listing}
+
+\end{minipage}
+\end{center}
+
 \end{frame}
