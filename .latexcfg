@@ -1,4 +1,4 @@
 {
-	"toolchain": "latexmk -xelatex %ARG %DOC",
+	"toolchain": "latexmk -xelatex -shell-escape %ARG %DOC",
 	"root": "vcs-git-intro.tex"
 }

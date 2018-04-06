@@ -1,5 +1,17 @@
 
-\section{Git primitives}
+\section{Git}
+
+\begin{frame}{Git introduction}
+
+\textit{Git} (2005, Linus Torvalds) is a very powerful VC system.
+
+\vspace{2em}
+
+In this presentation we'll skip description and internal working model, and we'll
+focus only on usage.
+
+\end{frame}
+
 
 \begin{frame}[fragile]{Initialize a git repository}
 
@@ -76,7 +88,7 @@ Create a new branch \\
 Create a new branch and switch to it \\
 \texttt{git checkout -b} \textit{<branchname>}
 
-Merge the branch \textit{bob} into \textit{master} \\
+Merge the branch \textit{bob} into current branch \\
 \texttt{git merge} \textit{bob}
 
 Send commits to (default) remote endpoint \\
@@ -90,32 +102,7 @@ Retrieve commits from (default) remote endpoint \\
 
 
 
-\section{Git: let's use it}
-
-\begin{frame}[fragile]{Git hosting services}
-\begin{itemize}
-  \item Enables multiple git instances synchronization
-  \item Provide ticketing systems (bugtracking/issue reporting system), project
-  management, wiki for documentations
-  \item Manage forks and pull requests
-  \item ACL and fine granted access
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}[fragile]{GitHub}
-
-\includegraphics[width=10em]{github-logo}
-
-\begin{itemize}
-  \item Most used public/private git hosting platform
-  \item \texttt{GNU/Linux} and many open source software are hosted into GitHub
-  \item Free for Open Source / Free Software, paid plans for private repositories
-  \item Wiki, issues, pull requests and so on
-  \item[] \url{https://github.com/}
-\end{itemize}
-\end{frame}
-
+\section{Git examples}
 
 \begin{frame}[c,fragile]{Before we begin}
 
@@ -165,7 +152,7 @@ $ cd gitrepodir/
 \end{frame}
 
 
-\begin{frame}[c,fragile]{Import a project into a repository}
+\begin{frame}[c,fragile]{Import an existing project into a repository}
 
 \begin{center}
 \begin{minipage}{\textwidth}
@@ -183,6 +170,31 @@ $ git add .
 $ git commit
 $ git remote add origin https://githosting/gitrepo
 $ git push -u origin master
+\end{minted}
+\end{listing}
+
+\end{minipage}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Commit after work}
+
+\begin{center}
+\begin{minipage}{\textwidth}
+
+\begin{listing}[H]
+%\scriptsize
+\begin{minted}[mathescape,
+							 numbersep=5pt,
+							 gobble=0,
+							 frame=lines,
+							 framesep=2mm]{bash}
+$ cd existingproject/
+$ git add modifiedfile1 addedfile2 removedfile3
+$ git commit
+$ git push
 \end{minted}
 \end{listing}
 
