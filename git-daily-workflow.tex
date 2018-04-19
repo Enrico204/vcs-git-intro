@@ -1,0 +1,193 @@
+
+
+\section{Git: workstation setup}
+
+\begin{frame}[c,fragile]{Before we begin}
+
+On a new computer/user profile, we need to setup our environment:
+
+\begin{center}
+\begin{minipage}{\textwidth}
+
+\begin{listing}[H]
+%\scriptsize
+\begin{minted}[mathescape,
+							 numbersep=5pt,
+							 gobble=0,
+							 frame=lines,
+							 framesep=2mm]{bash}
+$ git config --global user.name "John Doe"
+$ git config --global user.email john@doe.com
+\end{minted}
+\end{listing}
+
+\end{minipage}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Start to develop on an existing Git repository}
+
+If you(/your team) have an existing project on Git, you can start by \textit{cloning}
+the repository locally
+
+\begin{center}
+\begin{minipage}{\textwidth}
+
+\begin{listing}[H]
+%\scriptsize
+\begin{minted}[mathescape,
+							 numbersep=5pt,
+							 gobble=0,
+							 frame=lines,
+							 framesep=2mm]{bash}
+$ git clone https://githosting/gitrepo gitrepodir
+$ cd gitrepodir/
+\end{minted}
+\end{listing}
+
+\end{minipage}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Import an existing project into a repository}
+
+If you have an existing project outside Git, you can import it with:
+
+\begin{center}
+\begin{minipage}{\textwidth}
+
+\begin{listing}[H]
+%\scriptsize
+\begin{minted}[mathescape,
+							 numbersep=5pt,
+							 gobble=0,
+							 frame=lines,
+							 framesep=2mm]{bash}
+$ cd existingproject/
+$ git init
+$ git add .
+$ git commit
+$ git remote add origin https://githosting/gitrepo
+$ git push -u origin master
+\end{minted}
+\end{listing}
+
+\end{minipage}
+\end{center}
+
+\end{frame}
+
+
+
+
+\section{Git: daily workflow}
+
+\begin{frame}[c,fragile]{Pulling remote changes}
+
+At the beginning of the day, or when someone push changes to server, you need to
+update your local copy:
+
+\begin{center}
+\begin{minipage}{\textwidth}
+
+\begin{listing}[H]
+%\scriptsize
+\begin{minted}[mathescape,
+							 numbersep=5pt,
+							 gobble=0,
+							 frame=lines,
+							 framesep=2mm]{bash}
+$ cd existingproject/
+$ git pull
+\end{minted}
+\end{listing}
+
+\end{minipage}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Creating branch}
+
+When needed, you can create a new branch, starting from the current commit:
+
+\begin{center}
+\begin{minipage}{\textwidth}
+
+\begin{listing}[H]
+%\scriptsize
+\begin{minted}[mathescape,
+							 numbersep=5pt,
+							 gobble=0,
+							 frame=lines,
+							 framesep=2mm]{bash}
+$ cd existingproject/
+$ git branch new-feature-1
+$ git checkout new-feature-1
+$
+\end{minted}
+\end{listing}
+
+\end{minipage}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Merging branch}
+
+Let's suppose that we're on \texttt{master} branch and we want to merge \texttt{new-feature-1}
+
+\begin{center}
+\begin{minipage}{\textwidth}
+
+\begin{listing}[H]
+%\scriptsize
+\begin{minted}[mathescape,
+							 numbersep=5pt,
+							 gobble=0,
+							 frame=lines,
+							 framesep=2mm]{bash}
+$ cd existingproject/
+$ git merge new-feature-1
+$ git push
+$
+\end{minted}
+\end{listing}
+
+\end{minipage}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Commit and push after work}
+
+At the end of the day, or when needed, we can create a commit by issuing:
+
+\begin{center}
+\begin{minipage}{\textwidth}
+
+\begin{listing}[H]
+%\scriptsize
+\begin{minted}[mathescape,
+							 numbersep=5pt,
+							 gobble=0,
+							 frame=lines,
+							 framesep=2mm]{bash}
+$ cd existingproject/
+$ git add modifiedfile1 addedfile2 removedfile3
+$ git commit
+$ git push
+\end{minted}
+\end{listing}
+
+\end{minipage}
+\end{center}
+
+\end{frame}
